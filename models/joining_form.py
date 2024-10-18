@@ -31,7 +31,7 @@ class EmployeeJoiningForm(models.Model):
     phone_number = fields.Char(string='Personal Phone Number')
     office_phone = fields.Char(string='Office Phone Number')
     office_mail = fields.Char(string='Office Email')
-    spouse_dob = fields.Date(string='Spouse Date Of Birth')
+    # spouse_dob = fields.Date(string='Spouse Date Of Birth')
     number_of_childes = fields.Char(string='Number Of Childes')
     marital_stats = fields.Selection([('married', 'Married'), ('single', 'Unmarried')], string='Marital Status')
     address = fields.Text(string='Address')
@@ -67,8 +67,8 @@ class EmployeeJoiningForm(models.Model):
     previous_employment_company_location = fields.Char(string='Previous Employment - Company Location')
     previous_employment_company_designation = fields.Char(string='Previous Employment - Company Designation')
     previous_employment_company_tenure = fields.Char(string='Previous Employment - Company Tenure')
-    total_years_of_experience_before_joining_veranda = fields.Integer(
-        string='Total Years Of Experience Before Joining Veranda')
+    total_years_of_experience = fields.Integer(
+        string='Total Years Of Experience')
     emergency_contact_person_name = fields.Char(string='Emergency Contact Person Name')
     emergency_contact_person_relationship = fields.Char(string='Emergency Contact Person Relationship')
     emergency_contact_person_mobile_number = fields.Char(string='Emergency Contact Person Mobile Number')
@@ -123,15 +123,21 @@ class EmployeeJoiningForm(models.Model):
     def action_cancel(self):
         self.state = 'cancel'
 
-    def action_view_sale_orders(self):
+    def action_view_employee(self):
         """ Action to open sale orders related to the partner """
         return {
             'type': 'ir.actions.act_window',
             'name': 'Related Employee',
             'res_model': 'hr.employee',
             'view_mode': 'form',
-            'target': 'new',
-            'context': {
-                'related_joinee': self.id,
-            }
+            'domain': [('related_joinee.id', '=', self.id)],
+            'context': "{'create': False}"
         }
+
+    employee_count = fields.Integer(string="Employee", compute="_compute_employee_count")
+
+    def _compute_employee_count(self):
+        for partner in self:
+            employee = self.env['hr.employee'].search([('related_joinee', '=', partner.id)])
+            print(employee.name, 'emp')
+            partner.employee_count = self.env['hr.employee'].search_count([('related_joinee', '=', partner.id)])

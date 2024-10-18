@@ -31,6 +31,11 @@
                     <button name="action_cancel" string="Reject" type="object" invisible="state in ['done','cancel']"/>
                 </header>
                 <sheet>
+<!--                    <div name="button_box" class="oe_button_box">-->
+<!--                        <button class="oe_stat_button" type="object" name="action_view_employee" icon="fa-book">-->
+<!--                            <field string="Employee" name="employee_count" widget="statinfo"/>-->
+<!--                        </button>-->
+<!--                    </div>-->
 <!--                    <div>-->
 <!--                        <button name="action_view_sale_orders"-->
 <!--                                type="object"-->
@@ -57,7 +62,7 @@
                             <!--                        &lt;!&ndash;                        <field name="active"/>&ndash;&gt;-->
                             <field name="marital_stats"/>
                             <field name="spouse_name" modifiers="{'invisible': [('marital_stats', '!=', 'married')] }"/>
-                            <field name="spouse_dob" modifiers="{'invisible': [('marital_stats', '!=', 'married')]}"/>
+<!--                            <field name="spouse_dob" modifiers="{'invisible': [('marital_stats', '!=', 'married')]}"/>-->
                             <field name="number_of_childes"
                                    modifiers="{'invisible': [('marital_stats', '!=', 'married')]}"/>
 
@@ -76,7 +81,7 @@
                             <field name="previous_employment_company_location"/>
                             <field name="previous_employment_company_designation"/>
                             <field name="previous_employment_company_tenure"/>
-                            <field name="total_years_of_experience_before_joining_veranda"/>
+                            <field name="total_years_of_experience"/>
                             <field name="emergency_contact_person_name"/>
                             <field name="emergency_contact_person_relationship"/>
                             <field name="emergency_contact_person_mobile_number"/>
@@ -121,8 +126,8 @@
                                     <field name="marital_stats"/>
                                     <field name="spouse_name"
                                            modifiers="{'invisible': [('marital_stats', '!=', 'married')]}"/>
-                                    <field name="spouse_dob"
-                                           modifiers="{'invisible': [('marital_stats', '!=', 'married')]}"/>
+<!--                                    <field name="spouse_dob"-->
+<!--                                           modifiers="{'invisible': [('marital_stats', '!=', 'married')]}"/>-->
                                     <field name="name_of_children"
                                            modifiers="{'invisible': [('marital_stats', '!=', 'married')]}"/>
                                     <field name="blood_group"/>

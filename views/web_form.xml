@@ -314,24 +314,24 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
-                                                 data-type="char" data-name="Field">
-                                                <div class="row s_col_no_resize s_col_no_bgcolor">
-                                                    <label class="col-form-label col-sm-auto s_website_form_label"
-                                                           style="width: 200px">
-                                                        <span class="s_website_form_label_content">
-                                                            Spouse DOB:
-                                                        </span>
-                                                    </label>
-                                                    <div class="col-sm">
-                                                        <input id="spouse_dob" type="date"
-                                                               class="form-control s_website_form_input"
-                                                               name="spouse_dob" placeholder="If Married"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+<!--                                        <div class="row">-->
+<!--                                            <div class="form-group col-12 s_website_form_field s_website_form_required"-->
+<!--                                                 data-type="char" data-name="Field">-->
+<!--                                                <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                                                    <label class="col-form-label col-sm-auto s_website_form_label"-->
+<!--                                                           style="width: 200px">-->
+<!--                                                        <span class="s_website_form_label_content">-->
+<!--                                                            Spouse DOB:-->
+<!--                                                        </span>-->
+<!--                                                    </label>-->
+<!--                                                    <div class="col-sm">-->
+<!--                                                        <input id="spouse_dob" type="date"-->
+<!--                                                               class="form-control s_website_form_input"-->
+<!--                                                               name="spouse_dob" placeholder="If Married"/>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
 
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
@@ -785,13 +785,13 @@
                                                     <label class="col-form-label col-sm-auto s_website_form_label"
                                                            style="width: 200px">
                                                         <span class="s_website_form_label_content">
-                                                            Total Years of Experience (Before joining veranda):
+                                                            Total Years of Experience:
                                                         </span>
                                                     </label>
                                                     <div class="col-sm">
-                                                        <input id="total_years_of_experience_varanda" type="number"
+                                                        <input id="total_years_of_experience" type="number"
                                                                class="form-control s_website_form_input"
-                                                               name="total_years_of_experience_varanda"/>
+                                                               name="total_years_of_experience"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1133,6 +1133,30 @@
             </div>
         </t>
     </template>
+    <template id="logic_employee_form_error" name="Customer form error">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger">
+                            <div>
+                                <h5 style="color:red;">Please fill the spouse Date Of Birth..</h5>
+                            </div>
+                        </div>
+                        <!--                        <div class="alert alert-danger">-->
+                        <!--                            {% if error_message %}-->
+                        <!--                            {{ error_message }}-->
+                        <!--                            {% else %}-->
+                        <!--                            No error message.-->
+                        <!--                            {% endif %}-->
+                        <!--                        </div>-->
+
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
 <!--    <record id="contactus_thanks_joining" model="website.page">-->
 <!--        <field name="name">Thanks (Contact us)</field>-->
 <!--        <field name="type">qweb</field>-->
