@@ -129,7 +129,7 @@ class EmployeeJoiningForm(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'Related Employee',
             'res_model': 'hr.employee',
-            'view_mode': 'form',
+            'view_mode': 'tree,form',
             'domain': [('related_joinee.id', '=', self.id)],
             'context': "{'create': False}"
         }

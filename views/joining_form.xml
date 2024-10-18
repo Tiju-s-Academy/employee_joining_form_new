@@ -31,11 +31,11 @@
                     <button name="action_cancel" string="Reject" type="object" invisible="state in ['done','cancel']"/>
                 </header>
                 <sheet>
-<!--                    <div name="button_box" class="oe_button_box">-->
-<!--                        <button class="oe_stat_button" type="object" name="action_view_employee" icon="fa-book">-->
-<!--                            <field string="Employee" name="employee_count" widget="statinfo"/>-->
-<!--                        </button>-->
-<!--                    </div>-->
+                    <div name="button_box" class="oe_button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_employee" icon="fa-book">
+                            <field string="Employee" name="employee_count" widget="statinfo"/>
+                        </button>
+                    </div>
 <!--                    <div>-->
 <!--                        <button name="action_view_sale_orders"-->
 <!--                                type="object"-->
