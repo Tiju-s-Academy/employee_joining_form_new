@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
     <template id="joining_web_form_template">
        <title>Joining form</title>
         <t t-call="website.layout">
@@ -417,6 +416,96 @@
                                                     <label class="col-form-label col-sm-auto s_website_form_label"
                                                            style="width: 200px">
                                                         <span class="s_website_form_label_content">
+                                                            Skills and Certification:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input id="skills" type="text"
+                                                               class="form-control s_website_form_input"
+                                                               name="skills"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                                 data-type="char" data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content">
+                                                            Hobbies and Interests:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input id="hobbies" type="text"
+                                                               class="form-control s_website_form_input"
+                                                               name="hobbies"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                                 data-type="char" data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content">
+                                                            Are you active in social media:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input id="active_social_media" type="char"
+                                                               class="form-control s_website_form_input"
+                                                               name="active_social_media"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                                 data-type="char" data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content">
+                                                            Social media urls:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input id="social_urls" type="char"
+                                                               class="form-control s_website_form_input"
+                                                               name="social_urls"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                                 data-type="char" data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content">
+                                                            Have you done anchoring:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input id="anchoring" type="char"
+                                                               class="form-control s_website_form_input"
+                                                               name="anchoring"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                                 data-type="char" data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content">
                                                             Bank Name:
                                                         </span>
                                                     </label>
@@ -501,24 +590,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
-                                                 data-type="char" data-name="Field">
-                                                <div class="row s_col_no_resize s_col_no_bgcolor">
-                                                    <label class="col-form-label col-sm-auto s_website_form_label"
-                                                           style="width: 200px">
-                                                        <span class="s_website_form_label_content">
-                                                            Name As Per Bank Account:
-                                                        </span>
-                                                    </label>
-                                                    <div class="col-sm">
-                                                        <input id="name_as_per_bank" type="char"
-                                                               class="form-control s_website_form_input"
-                                                               name="name_as_per_bank"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
                                                  data-type="char" data-name="Field">
@@ -537,25 +609,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
-                                                 data-type="char" data-name="Field">
-                                                <div class="row s_col_no_resize s_col_no_bgcolor">
-                                                    <label class="col-form-label col-sm-auto s_website_form_label"
-                                                           style="width: 200px">
-                                                        <span class="s_website_form_label_content">
-                                                            Name As Per Aadhaar Card:
-                                                        </span>
-                                                    </label>
 
-                                                    <div class="col-sm">
-                                                        <input id="name_as_per_aadhar" type="char"
-                                                               class="form-control s_website_form_input"
-                                                               name="name_as_per_aadhar"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
                                                  data-type="char" data-name="Field">
@@ -959,24 +1013,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
-                                                 data-type="char" data-name="Field">
-                                                <div class="row s_col_no_resize s_col_no_bgcolor">
-                                                    <label class="col-form-label col-sm-auto s_website_form_label"
-                                                           style="width: 200px">
-                                                        <span class="s_website_form_label_content">
-                                                            Name As Per Pan Card:
-                                                        </span>
-                                                    </label>
-                                                    <div class="col-sm">
-                                                        <input id="pan_name" type="char"
-                                                               class="form-control s_website_form_input"
-                                                               name="pan_name"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
                                                  data-type="char" data-name="Field">

@@ -15,11 +15,8 @@ class EmployeeJoiningForm(models.Model):
     branch_bank = fields.Char(string='Branch')
     ifsc_code = fields.Char(string='IFSC Code')
     micr_code = fields.Char(string='MICR Code')
-    name_as_per_bank = fields.Char(string='Name As Per Bank Account')
     aadhar_card_number = fields.Char(string='Aadhar Card Number')
-    name_as_per_aadhar = fields.Char(string='Name As Per Aadhaar Card')
     pan_card_number = fields.Char(string='Pan Card Number')
-    name_as_per_pan = fields.Char(string='Name As Per Pan Card')
     pf_uan_number = fields.Char(string='PF UAN Number')
     esi_ip_number = fields.Char(string='ESI IP Number')
     blood_group = fields.Char(string='Blood Group')
@@ -80,6 +77,11 @@ class EmployeeJoiningForm(models.Model):
     nominee_relation = fields.Char(string='Nominee Relation')
     nominee_id_proof = fields.Char(string='Nominee ID Proof Pan or Aadhar')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')], string='Gender')
+    skills_and_certification = fields.Text(string="Skills and Certification")
+    hobbies = fields.Text(string="Hobbies and Intersets")
+    active_social_media = fields.Char(string="Are you active in social media")
+    social_media_urls = fields.Text(string="Social media activities")
+    have_you_done_anchoring = fields.Char(string="Have you done anchoring")
 
     def action_confirm_employee(self):
         print('hi')

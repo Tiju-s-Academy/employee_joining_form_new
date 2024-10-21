@@ -105,7 +105,6 @@
                                     <field name="branch_bank"/>
                                     <field name="ifsc_code"/>
                                     <field name="micr_code"/>
-                                    <field name="name_as_per_bank"/>
                                 </group>
                             </group>
                         </page>
@@ -113,9 +112,7 @@
                             <group>
                                 <group>
                                     <field name="aadhar_card_number"/>
-                                    <field name="name_as_per_aadhar"/>
                                     <field name="pan_card_number"/>
-                                    <field name="name_as_per_pan"/>
 
                                 </group>
                             </group>
@@ -135,6 +132,17 @@
                                     <field name="esi_ip_number"/>
 
 
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Activities">
+                            <group>
+                                <group>
+                                    <field name="skills_and_certification"/>
+                                    <field name="hobbies"/>
+                                    <field name="active_social_media"/>
+                                    <field name="social_media_urls"/>
+                                    <field name="have_you_done_anchoring"/>
                                 </group>
                             </group>
                         </page>

@@ -36,11 +36,8 @@ class WebFormController(Controller):
             'ifsc_code': kw.get('ifsc'),
             'micr_code': kw.get('micr'),
             'branch': kw.get('branch'),
-            'name_as_per_bank': kw.get('name_as_per_bank'),
             'aadhar_card_number': kw.get('aadhar_number'),
-            'name_as_per_aadhar': kw.get('name_as_per_aadhar'),
             'pan_card_number': kw.get('pan_number'),
-            'name_as_per_pan': kw.get('pan_name'),
             'marital_stats': kw.get('marital_stats'),
             'blood_group': kw.get('blood_group'),
             'pf_uan_number': kw.get('pf_number'),
@@ -76,7 +73,12 @@ class WebFormController(Controller):
             'emergency_details_any_allergies_specifically': kw.get('emergency_details_any_allergies'),
             'nominee_name': kw.get('nominee_name'),
             'nominee_relation': kw.get('nominee_relationship'),
-            'nominee_id_proof': kw.get('nominee_id_proof')
+            'nominee_id_proof': kw.get('nominee_id_proof'),
+            'skills_and_certification': kw.get('skills'),
+            'hobbies': kw.get('hobbies'),
+            'active_social_media': kw.get('active_social_media'),
+            'social_media_urls': kw.get('social_urls'),
+            'have_you_done_anchoring': kw.get('anchoring')
 
             # 'phone': post.get('phone'),
             # 'email': post.get('email'),
