@@ -1,4 +1,4 @@
-from odoo import fields,models,api,_
+from odoo import fields, models, api, _
 
 
 class EmployeeJoiningForm(models.Model):
@@ -48,7 +48,7 @@ class EmployeeJoiningForm(models.Model):
     photo = fields.Binary(string='Photo')
     father_number = fields.Char(string='Father Number')
     mother_number = fields.Char(string='Mother Number')
-    branch = fields.Char( string='Branch')
+    branch = fields.Char(string='Branch')
     department_id = fields.Many2one('hr.department', string='Department')
     work_location = fields.Char(string='Work Location(city)')
     work_place = fields.Char(string='Work Place(office)')
@@ -77,11 +77,17 @@ class EmployeeJoiningForm(models.Model):
     nominee_relation = fields.Char(string='Nominee Relation')
     nominee_id_proof = fields.Char(string='Nominee ID Proof Pan or Aadhar')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')], string='Gender')
-    skills_and_certification = fields.Text(string="Skills and Certification")
+    skills = fields.Text(string="Skills ")
     hobbies = fields.Text(string="Hobbies and Intersets")
-    active_social_media = fields.Char(string="Are you active in social media")
+    active_social_media = fields.Selection([('yes', 'Yes'), ('no', 'No')],
+                                               string='Are you active in social media')
     social_media_urls = fields.Text(string="Social media activities")
-    have_you_done_anchoring = fields.Char(string="Have you done anchoring")
+    have_you_done_anchoring = fields.Selection([('yes', 'Yes'), ('no', 'No')],
+                                               string='Have you done anchoring')
+    certification = fields.Text(string="Certification")
+    insta_url = fields.Char(string="Instagram")
+    fb_url = fields.Char(string="Facebook")
+    linkedin_url = fields.Char(string="Linkedin")
 
     def action_confirm_employee(self):
         print('hi')
@@ -113,7 +119,7 @@ class EmployeeJoiningForm(models.Model):
             'work_email': self.office_mail,
             'department_id': self.department_id.id,
             'user_id': user.id,
-            'related_joinee': self.id# Link the created user to the employee
+            'related_joinee': self.id  # Link the created user to the employee
         }
 
         # Create the employee

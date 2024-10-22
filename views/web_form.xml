@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+
     <template id="joining_web_form_template">
-       <title>Joining form</title>
+        <title>Joining form</title>
         <t t-call="website.layout">
 
             <div id="wrap">
@@ -60,7 +61,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                       <div class="row">
+                                        <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
                                                  data-type="char" data-name="Field">
                                                 <div class="row s_col_no_resize s_col_no_bgcolor">
@@ -313,24 +314,24 @@
                                             </div>
                                         </div>
 
-<!--                                        <div class="row">-->
-<!--                                            <div class="form-group col-12 s_website_form_field s_website_form_required"-->
-<!--                                                 data-type="char" data-name="Field">-->
-<!--                                                <div class="row s_col_no_resize s_col_no_bgcolor">-->
-<!--                                                    <label class="col-form-label col-sm-auto s_website_form_label"-->
-<!--                                                           style="width: 200px">-->
-<!--                                                        <span class="s_website_form_label_content">-->
-<!--                                                            Spouse DOB:-->
-<!--                                                        </span>-->
-<!--                                                    </label>-->
-<!--                                                    <div class="col-sm">-->
-<!--                                                        <input id="spouse_dob" type="date"-->
-<!--                                                               class="form-control s_website_form_input"-->
-<!--                                                               name="spouse_dob" placeholder="If Married"/>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
+                                        <!--                                        <div class="row">-->
+                                        <!--                                            <div class="form-group col-12 s_website_form_field s_website_form_required"-->
+                                        <!--                                                 data-type="char" data-name="Field">-->
+                                        <!--                                                <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                        <!--                                                    <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                        <!--                                                           style="width: 200px">-->
+                                        <!--                                                        <span class="s_website_form_label_content">-->
+                                        <!--                                                            Spouse DOB:-->
+                                        <!--                                                        </span>-->
+                                        <!--                                                    </label>-->
+                                        <!--                                                    <div class="col-sm">-->
+                                        <!--                                                        <input id="spouse_dob" type="date"-->
+                                        <!--                                                               class="form-control s_website_form_input"-->
+                                        <!--                                                               name="spouse_dob" placeholder="If Married"/>-->
+                                        <!--                                                    </div>-->
+                                        <!--                                                </div>-->
+                                        <!--                                            </div>-->
+                                        <!--                                        </div>-->
 
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
@@ -416,13 +417,31 @@
                                                     <label class="col-form-label col-sm-auto s_website_form_label"
                                                            style="width: 200px">
                                                         <span class="s_website_form_label_content">
-                                                            Skills and Certification:
+                                                            Skills:
                                                         </span>
                                                     </label>
                                                     <div class="col-sm">
                                                         <input id="skills" type="text"
                                                                class="form-control s_website_form_input"
                                                                name="skills"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                                 data-type="char" data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content">
+                                                            Certification:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input id="certification" type="text"
+                                                               class="form-control s_website_form_input"
+                                                               name="certification"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -447,7 +466,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
-                                                 data-type="char" data-name="Field">
+                                                 data-type="selection" data-name="Field">
                                                 <div class="row s_col_no_resize s_col_no_bgcolor">
                                                     <label class="col-form-label col-sm-auto s_website_form_label"
                                                            style="width: 200px">
@@ -456,9 +475,22 @@
                                                         </span>
                                                     </label>
                                                     <div class="col-sm">
-                                                        <input id="active_social_media" type="char"
-                                                               class="form-control s_website_form_input"
-                                                               name="active_social_media"/>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="active_social_media"
+                                                                   id="active_social_media_yes" value="yes"/>
+                                                            <label class="form-check-label"
+                                                                   for="active_social_media_yes">Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="active_social_media"
+                                                                   id="active_social_media_no" value="no"/>
+                                                            <label class="form-check-label"
+                                                                   for="active_social_media_no">No
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -470,20 +502,47 @@
                                                     <label class="col-form-label col-sm-auto s_website_form_label"
                                                            style="width: 200px">
                                                         <span class="s_website_form_label_content">
-                                                            Social media urls:
+                                                            Social Media URLs:
                                                         </span>
                                                     </label>
                                                     <div class="col-sm">
-                                                        <input id="social_urls" type="char"
-                                                               class="form-control s_website_form_input"
-                                                               name="social_urls"/>
+                                                        <table class="table table-bordered" id="social_media_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Instagram</th>
+                                                                    <th>Facebook</th>
+                                                                    <th>LinkedIn</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input type="url" class="form-control"
+                                                                               name="instagram_urls[]"
+                                                                               placeholder="Instagram URL"/>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="url" class="form-control"
+                                                                               name="facebook_urls[]"
+                                                                               placeholder="Facebook URL"/>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="url" class="form-control"
+                                                                               name="linkedin_urls[]"
+                                                                               placeholder="LinkedIn URL"/>
+                                                                    </td>
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
-                                                 data-type="char" data-name="Field">
+                                                 data-type="selection" data-name="Field">
                                                 <div class="row s_col_no_resize s_col_no_bgcolor">
                                                     <label class="col-form-label col-sm-auto s_website_form_label"
                                                            style="width: 200px">
@@ -492,13 +551,23 @@
                                                         </span>
                                                     </label>
                                                     <div class="col-sm">
-                                                        <input id="anchoring" type="char"
-                                                               class="form-control s_website_form_input"
-                                                               name="anchoring"/>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="anchoring" id="anchoring_yes" value="yes"/>
+                                                            <label class="form-check-label" for="anchoring_yes">Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="anchoring" id="anchoring_no" value="no"/>
+                                                            <label class="form-check-label" for="anchoring_no">No
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="row">
                                             <div class="form-group col-12 s_website_form_field s_website_form_required"
                                                  data-type="char" data-name="Field">
@@ -1119,7 +1188,6 @@
                             </div>
 
 
-
                             <div class="dropdown-item-text o_add_to_dashboard" align="center">
                                 <button type="submit" value="Upload" id="emp_form" class="btn btn-primary">Submit
                                 </button>
@@ -1157,13 +1225,13 @@
                                             <b>successfully</b>
                                         </span>
                                     </h5>
-<!--                                    <p class="text-center">We will get back to you shortly.</p>-->
+                                    <!--                                    <p class="text-center">We will get back to you shortly.</p>-->
                                 </div>
                             </section>
                         </div>
-<!--                        <div class="col-lg-4">-->
-<!--                            <t t-call="website.company_description"/>-->
-<!--                        </div>-->
+                        <!--                        <div class="col-lg-4">-->
+                        <!--                            <t t-call="website.company_description"/>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
                 <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
@@ -1194,50 +1262,50 @@
         </t>
     </template>
 
-<!--    <record id="contactus_thanks_joining" model="website.page">-->
-<!--        <field name="name">Thanks (Contact us)</field>-->
-<!--        <field name="type">qweb</field>-->
-<!--        <field name="url">/test-thank-you</field>-->
-<!--        <field name="website_indexed" eval="False"/>-->
-<!--        <field name="is_published">True</field>-->
-<!--        <field name="key">website_form.contactus_thanks</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <t name="Thanks (Contact us)" t-name="website_form.contactus_thanks">-->
-<!--                <t t-call="website.layout">-->
-<!--                    <div id="wrap">-->
-<!--                        <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>-->
-<!--                        <div class="container mt-4">-->
-<!--                            <div class="row">-->
-<!--                                <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">-->
-<!--                                    <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"-->
-<!--                                             data-snippet="s_text_block" data-name="Text">-->
-<!--                                        <div class="container">-->
-<!--                                            <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>-->
-<!--                                            <br/>-->
-<!--                                            <h1 class="text-center">Thank You!</h1>-->
-<!--                                            <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">-->
-<!--                                                <hr class="mx-auto border-top w-50 border-dark text-center"/>-->
-<!--                                            </div>-->
-<!--                                            <h5 class="text-center">-->
-<!--                                                <span class="fa fa-check-circle"/>-->
-<!--                                                <span>Your information has been sent-->
-<!--                                                    <b>successfully</b>-->
-<!--                                                </span>-->
-<!--                                            </h5>-->
-<!--&lt;!&ndash;                                            <p class="text-center">We will get back to you shortly.</p>&ndash;&gt;-->
-<!--                                        </div>-->
-<!--                                    </section>-->
-<!--                                </div>-->
-<!--                                <div class="col-lg-4">-->
-<!--                                    <t t-call="website.company_description"/>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>-->
-<!--                    </div>-->
-<!--                </t>-->
-<!--            </t>-->
-<!--        </field>-->
-<!--    </record>-->
+    <!--    <record id="contactus_thanks_joining" model="website.page">-->
+    <!--        <field name="name">Thanks (Contact us)</field>-->
+    <!--        <field name="type">qweb</field>-->
+    <!--        <field name="url">/test-thank-you</field>-->
+    <!--        <field name="website_indexed" eval="False"/>-->
+    <!--        <field name="is_published">True</field>-->
+    <!--        <field name="key">website_form.contactus_thanks</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <t name="Thanks (Contact us)" t-name="website_form.contactus_thanks">-->
+    <!--                <t t-call="website.layout">-->
+    <!--                    <div id="wrap">-->
+    <!--                        <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>-->
+    <!--                        <div class="container mt-4">-->
+    <!--                            <div class="row">-->
+    <!--                                <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">-->
+    <!--                                    <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"-->
+    <!--                                             data-snippet="s_text_block" data-name="Text">-->
+    <!--                                        <div class="container">-->
+    <!--                                            <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>-->
+    <!--                                            <br/>-->
+    <!--                                            <h1 class="text-center">Thank You!</h1>-->
+    <!--                                            <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">-->
+    <!--                                                <hr class="mx-auto border-top w-50 border-dark text-center"/>-->
+    <!--                                            </div>-->
+    <!--                                            <h5 class="text-center">-->
+    <!--                                                <span class="fa fa-check-circle"/>-->
+    <!--                                                <span>Your information has been sent-->
+    <!--                                                    <b>successfully</b>-->
+    <!--                                                </span>-->
+    <!--                                            </h5>-->
+    <!--&lt;!&ndash;                                            <p class="text-center">We will get back to you shortly.</p>&ndash;&gt;-->
+    <!--                                        </div>-->
+    <!--                                    </section>-->
+    <!--                                </div>-->
+    <!--                                <div class="col-lg-4">-->
+    <!--                                    <t t-call="website.company_description"/>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>-->
+    <!--                    </div>-->
+    <!--                </t>-->
+    <!--            </t>-->
+    <!--        </field>-->
+    <!--    </record>-->
 
 </odoo>

@@ -138,11 +138,16 @@
                         <page string="Activities">
                             <group>
                                 <group>
-                                    <field name="skills_and_certification"/>
+                                    <field name="skills"/>
+                                    <field name="certification"/>
                                     <field name="hobbies"/>
                                     <field name="active_social_media"/>
-                                    <field name="social_media_urls"/>
                                     <field name="have_you_done_anchoring"/>
+                                </group>
+                                <group name="Social media url" string="Social Media Urls">
+                                    <field name="insta_url"/>
+                                    <field name="fb_url"/>
+                                    <field name="linkedin_url"/>
                                 </group>
                             </group>
                         </page>

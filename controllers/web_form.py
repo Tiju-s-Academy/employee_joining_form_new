@@ -74,11 +74,15 @@ class WebFormController(Controller):
             'nominee_name': kw.get('nominee_name'),
             'nominee_relation': kw.get('nominee_relationship'),
             'nominee_id_proof': kw.get('nominee_id_proof'),
-            'skills_and_certification': kw.get('skills'),
+            'skills': kw.get('skills'),
             'hobbies': kw.get('hobbies'),
             'active_social_media': kw.get('active_social_media'),
             'social_media_urls': kw.get('social_urls'),
-            'have_you_done_anchoring': kw.get('anchoring')
+            'have_you_done_anchoring': kw.get('anchoring'),
+            'certification': kw.get('certification'),
+            'insta_url': kw.get('instagram_urls[]'),
+            'fb_url':kw.get('facebook_urls[]'),
+            'linkedin_url': kw.get('linkedin_urls[]')
 
             # 'phone': post.get('phone'),
             # 'email': post.get('email'),
