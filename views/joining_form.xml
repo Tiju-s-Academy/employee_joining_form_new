@@ -51,8 +51,6 @@
                             <field name="branch"/>
                             <field name="department_id"/>
                             <field name="phone_number"/>
-                            <field name="office_phone"/>
-                            <field name="office_mail"/>
                             <field name="gender"/>
                             <field name="mail_id"/>
                             <field name="address"/>

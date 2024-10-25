@@ -26,8 +26,6 @@ class EmployeeJoiningForm(models.Model):
     date_of_birth = fields.Date(string='Date Of Birth')
     mail_id = fields.Char(string='Email')
     phone_number = fields.Char(string='Personal Phone Number')
-    office_phone = fields.Char(string='Office Phone Number')
-    office_mail = fields.Char(string='Office Email')
     # spouse_dob = fields.Date(string='Spouse Date Of Birth')
     number_of_childes = fields.Char(string='Number Of Childes')
     marital_stats = fields.Selection([('married', 'Married'), ('single', 'Unmarried')], string='Marital Status')
