@@ -6,11 +6,15 @@ class WebFormController(Controller):
     @route(['/joining_form'], auth='public', website=True)
     def joining_web_form(self, **kwargs):
         department = request.env['hr.department'].sudo().search([])
+        branch = request.env['employee.branch'].sudo().search([])
+        work_location = request.env['hr.work.location'].sudo().search([])
         values = {}
         values.update({
             'department': department,
+            'branch' : branch,
+            'work_location' : work_location
         })
-        return request.render('employee_joining_form.joining_web_form_template', values)
+        return request.render('employee_joining_form_new.joining_web_form_template', values)
 
     @route('/joining_form/submit', type='http', csrf=False, auth='public', website=True, methods=['POST'])
     def web_form_submit(self, **kw):

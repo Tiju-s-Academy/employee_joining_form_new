@@ -46,13 +46,20 @@ class EmployeeJoiningForm(models.Model):
     photo = fields.Binary(string='Photo')
     father_number = fields.Char(string='Father Number')
     mother_number = fields.Char(string='Mother Number')
-    branch = fields.Char(string='Branch')
+    branch = fields.Many2one('employee.branch',string='Branch')
     department_id = fields.Many2one('hr.department', string='Department')
-    work_location = fields.Char(string='Work Location(city)')
+    work_location = fields.Many2one('hr.work.location',string='Work Location(city)')
     work_place = fields.Char(string='Work Place(office)')
     highest_education_college_name = fields.Char(string='Highest Education College Name')
-    highest_education_full_time_or_partime = fields.Char(
-        string='Highest Education Qualification - Full Time / Part Time / Distance Education')
+    highest_education_full_time_or_partime = fields.Selection(
+        selection=[
+            ('full_time', 'Full Time'),
+            ('part_time', 'Part Time'),
+            ('distance', 'Distance Education'),
+        ],
+        string='Highest Education Qualification - Full Time / Part Time / Distance Education',default='full_time'
+    )
+
     highest_education_degree = fields.Char(string='Highest Education Qualification - Degree')
     highest_education_qualification_specialization = fields.Char(
         string='Highest Education Qualification - Specialization')
@@ -88,18 +95,16 @@ class EmployeeJoiningForm(models.Model):
     linkedin_url = fields.Char(string="Linkedin")
 
     def action_confirm_employee(self):
-        print('hi')
         self.state = 'confirm'
 
     def action_create_user(self):
         # Create the user first
         user_vals = {
             'name': self.name,  # User name
-            'login': self.office_mail,  # User login (use the office mail or unique field)
-            'email': self.office_mail,
+            'login': self.mail_id,  # User login (use the office mail or unique field)
+            'email': self.mail_id,
             # 'partner_id': 10# User email
         }
-
         user = self.env['res.users'].create(user_vals)  # Create the user
 
         # Call the method to create the employee and link it to this user
@@ -113,18 +118,45 @@ class EmployeeJoiningForm(models.Model):
         employee_vals = {
             'name': self.name,
             'job_title': self.designation,
-            'mobile_phone': self.office_phone,
-            'work_email': self.office_mail,
+            'mobile_phone': self.phone_number,
+            'work_email': self.mail_id,
             'department_id': self.department_id.id,
+            'private_email': self.mail_id,
+            'private_phone': self.phone_number,
+            'gender': self.gender,
+            'date_of_joining': self.date_of_joining,
+            'bank_name': self.bank_name,
+            'branch_bank': self.branch_bank,
+            'ifsc_code': self.ifsc_code,
+            'blood_group': self.blood_group,
+            'private_street': self.address,
+            'private_email': self.mail_id,
+            'private_phone': self.phone_number,
+            'birthday': self.date_of_birth,
+            'marital': self.marital_stats,
+            'study_school': self.highest_education_college_name,
+            'study_field': self.highest_education_degree,
+            'emergency_contact': self.emergency_contact_person_name,
+            'emergency_phone': self.emergency_contact_person_mobile_number,
+            'emergency_contact_person_relationship': self.emergency_contact_person_relationship,
+            'emergency_contact_person_email': self.emergency_contact_person_email,
+            'emergency_contact_person_correspondence_address': self.emergency_contact_person_correspondence_address,
+            'previous_employment_company_name': self.previous_employment_company_name,
+            'previous_employment_company_location': self.previous_employment_company_location,
+            'previous_employment_company_designation': self.previous_employment_company_designation,
+            'total_years_of_experience': self.total_years_of_experience,
+            'aadhar_card_number': self.aadhar_card_number,
+            'pan_card_number': self.pan_card_number,
             'user_id': user.id,
-            'related_joinee': self.id  # Link the created user to the employee
+            'branch_id': self.branch.id,
+            'children': self.number_of_childes,
+            'spouse_name': self.spouse_name,
+            'related_joinee': self.id,  # Link the created user to the employee
+            'work_location_id': self.work_location.id,
         }
 
         # Create the employee
         employee = self.env['hr.employee'].create(employee_vals)
-
-        # Link the user back to the employee (two-way linking)
-        # user.partner_id = employee.address_home_id
 
     def action_cancel(self):
         self.state = 'cancel'
@@ -144,6 +176,5 @@ class EmployeeJoiningForm(models.Model):
 
     def _compute_employee_count(self):
         for partner in self:
-            employee = self.env['hr.employee'].search([('related_joinee', '=', partner.id)])
-            print(employee.name, 'emp')
-            partner.employee_count = self.env['hr.employee'].search_count([('related_joinee', '=', partner.id)])
+            employee_count = self.env['hr.employee'].search_count([('related_joinee', '=', partner.id)])
+            partner.employee_count = employee_count  # ✅ Assign count correctly

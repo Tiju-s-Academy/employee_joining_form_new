@@ -1,6 +1,6 @@
 {
     'name': 'Joining Form',
-    'version': '1.0.0',
+    'version': '17.0.1.0.0',
     'summary': 'Brief description of the module',
     'description': """
         A more detailed description of the module.
@@ -11,8 +11,7 @@
     'license': 'LGPL-3',
     'depends': [
         'base',  # List of module dependencies
-        'mail', 'web', 'hr'
-        # Add other module dependencies here
+        'mail', 'web', 'hr','tijus_custom_base',
     ],
     'data': [
         'security/groups.xml',
@@ -22,8 +21,6 @@
         'views/employee.xml'
 
     ],
-
-
     'installable': True,  # Whether the module can be installed
     'application': False,  # Set to True if it's an application module
     'auto_install': False,  # Automatically install if dependencies are met

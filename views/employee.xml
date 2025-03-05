@@ -9,6 +9,32 @@
             <xpath expr="//field[@name='employee_type']" position="after">
                 <field name="related_joinee"/>
             </xpath>
+            <xpath expr="//field[@name='private_car_plate']" position="after">
+                <field name="blood_group"/>
+            </xpath>
+            <xpath expr="//field[@name='emergency_contact']" position="after">
+                <field name="emergency_contact_person_relationship"/>
+                <field name="emergency_contact_person_email"/>
+                <field name="emergency_contact_person_correspondence_address"/>
+            </xpath>
+            <xpath expr="//field[@name='private_phone']" position="after">
+                <field name="bank_name"/>
+                <field name="branch_bank"/>
+                <field name="ifsc_code"/>
+            </xpath>
+            <xpath expr="//field[@name='work_location_id']" position="after">
+                <field name="date_of_joining"/>
+            </xpath>
+            <xpath expr="//field[@name='has_work_permit']" position="after">
+                <field name="previous_employment_company_name"/>
+                <field name="previous_employment_company_location"/>
+                <field name="previous_employment_company_designation"/>
+                <field name="total_years_of_experience"/>
+            </xpath>
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <field name="aadhar_card_number"/>
+                <field name="pan_card_number"/>
+            </xpath>
         </field>
     </record>
 </odoo>
