@@ -587,9 +587,15 @@
                                                         </span>
                                                     </label>
                                                     <div class="col-sm">
-                                                        <input id="branch" type="char"
-                                                               class="form-control s_website_form_input"
-                                                               name="branch"/>
+                                                        <select name="branch"
+                                                                t-attf-class="form-control s_website_form_input"
+                                                                required="1">
+                                                            <t t-foreach="branch or []" t-as="branch">
+                                                                <option t-att-value="branch.id">
+                                                                    <t t-esc="branch.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
