@@ -11,7 +11,7 @@
     'license': 'LGPL-3',
     'depends': [
         'base',  # List of module dependencies
-        'mail', 'web', 'hr',
+        'mail', 'web', 'hr','tijus_custom_base',
     ],
     'data': [
         'security/groups.xml',
